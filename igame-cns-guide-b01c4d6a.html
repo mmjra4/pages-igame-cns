@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 杂志专题</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Noto Serif SC', 'Times New Roman', serif;
+            color: #2c2c2c;
+            background-color: #f7f5f0;
+            line-height: 1.7;
+        }
+
+        .hero {
+            background: #1a1a1a;
+            color: #eae6df;
+            padding: 4rem 2rem 3.5rem;
+            text-align: center;
+            border-bottom: 1px solid #3a3a3a;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background: #b89b6b;
+            margin: 2rem auto 0;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .sub {
+            font-size: 1rem;
+            color: #b1a99b;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            margin-top: 0.5rem;
+            font-family: 'Arial', 'Helvetica', sans-serif;
+        }
+
+        .hero .sub span {
+            display: inline-block;
+            margin: 0 0.5rem;
+            color: #7a6f5d;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 4rem;
+        }
+
+        .intro-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2.2rem 2rem;
+            margin: 0 0 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            border: 1px solid #e8e3d9;
+        }
+
+        .intro-card h2 {
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: #3d3d3d;
+            border-left: 4px solid #b89b6b;
+            padding-left: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .intro-card p {
+            margin-bottom: 1.2rem;
+            text-indent: 2em;
+        }
+
+        .intro-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight-link {
+            color: #9b7e4e;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(155, 126, 78, 0.3);
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .highlight-link:hover {
+            color: #6b5533;
+            border-bottom-color: #6b5533;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+        }
+
+        .feature-item {
+            background: #fdfcf9;
+            border-radius: 16px;
+            padding: 1.8rem 1.5rem;
+            border: 1px solid #e3ddd3;
+            transition: background 0.2s;
+        }
+
+        .feature-item h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 0.6rem;
+            color: #3f3a32;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: #5e5a52;
+            line-height: 1.6;
+            text-indent: 0;
+        }
+
+        .faq-summary {
+            background: #ede9e1;
+            border-radius: 20px;
+            padding: 2rem 2rem 1.8rem;
+            margin-top: 2rem;
+        }
+
+        .faq-summary h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #3d3d3d;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .faq-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 500;
+            color: #4f4a40;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-item p {
+            font-size: 0.95rem;
+            color: #5e5a52;
+            margin-left: 0.5rem;
+            text-indent: 0;
+        }
+
+        .visit-note {
+            text-align: center;
+            padding: 2.5rem 1rem 1rem;
+            border-top: 1px solid #ddd8cd;
+            margin-top: 2.5rem;
+            font-size: 1rem;
+            color: #5e5a52;
+        }
+
+        .visit-note a {
+            color: #9b7e4e;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(155, 126, 78, 0.3);
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .visit-note a:hover {
+            color: #6b5533;
+            border-bottom-color: #6b5533;
+        }
+
+        .footer-tag {
+            text-align: center;
+            padding: 1.2rem;
+            font-size: 0.8rem;
+            color: #9b9488;
+            letter-spacing: 0.1em;
+            font-family: 'Arial', sans-serif;
+            border-top: 1px solid #e2dbd0;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero {
+                padding: 2.8rem 1.2rem 2.5rem;
+            }
+
+            .container {
+                padding: 1.5rem 1rem 3rem;
+            }
+
+            .intro-card {
+                padding: 1.5rem 1.2rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .faq-summary {
+                padding: 1.5rem;
+            }
+
+            .visit-note {
+                padding: 1.5rem 0.5rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<section class="hero">
+    <h1>爱游戏</h1>
+    <div class="sub">再次相见 · 如同初遇 <span>✦</span> 收藏此刻 <span>✦</span> 持续注视</div>
+</section>
+
+<div class="container">
+
+    <div class="intro-card">
+        <h2>不止是重访</h2>
+        <p>
+            有时候，一个安静的角落比热闹的广场更容易让人停留。再次回到这里，不是因为有什么非看不可的新闻，而是记得有一片地方，始终以它自己的节奏生长着。
+            <a href="https://igame-cns.com" class="highlight-link">爱游戏</a> 便是这样的存在——不喧哗，但总有些内容值得你多看一眼，再记上一笔。
+        </p>
+        <p>
+            从几年前无意间的发现，到后来慢慢变成习惯，每次打开都像是翻一本熟悉的杂志：封面换了，栏目还在；作者不同了，味道却没变。这种微妙的连续感，大概就是持续关注带来的回响。
+        </p>
+    </div>
+
+    <div class="feature-grid">
+        <div class="feature-item">
+            <h3>收藏即确认</h3>
+            <p>
+                把喜欢的页面收藏起来，是再朴素不过的动作。但收藏夹里的链接有时比备忘录更诚实——它标记着那些你真正愿意再次踏入的地方。
+            </p>
+        </div>
+        <div class="feature-item">
+            <h3>节奏里的安静</h3>
+            <p>
+                不追求日更的紧迫，也不制造错过的焦虑。文章更新的间隔恰到好处，像老朋友定期寄来的信，你知道它会在那里，不急不缓。
+            </p>
+        </div>
+        <div class="feature-item">
+            <h3>叙述的温度</h3>
+            <p>
+                比起堆砌数据或追逐热点，更偏爱带有个人视角的叙述。每一篇都像一次对谈，有留白，有余地，读完后还能在心里停一会儿。
+            </p>
+        </div>
+        <div class="feature-item">
+            <h3>不被算法打扰</h3>
+            <p>
+                没有弹窗，没有自动播放，没有猜你喜欢的列表。页面是安静的，阅读是私人的——这种克制本身，就是一种尊重。
+            </p>
+        </div>
+    </div>
+
+    <div class="faq-summary">
+        <h3>一些你可能想问的</h3>
+        <div class="faq-item">
+            <strong>如何再次找到这里？</strong>
+            <p>添加书签是最直接的方式，或者直接记住这个名字——<a href="https://igame-cns.com" class="highlight-link">爱游戏</a>，简单，好记，也不会混淆。</p>
+        </div>
+        <div class="faq-item">
+            <strong>内容多久更新一次？</strong>
+            <p>没有固定的时刻表，但值得等待。保持关注，你会在合适的时候看到新的篇章。</p>
+        </div>
+        <div class="faq-item">
+            <strong>可以分享给朋友吗？</strong>
+            <p>当然，分享本身就是一种认可。如果对方也喜欢安静、有质感的阅读体验，那这里会是一个不错的去处。</p>
+        </div>
+    </div>
+
+    <div class="visit-note">
+        <p>如果你曾来过，或只是第一次听说，不妨把 <a href="https://igame-cns.com">爱游戏</a> 放进一个你觉得合适的位置。有些地方，值得被持续看见。</p>
+    </div>
+
+</div>
+
+<div class="footer-tag">杂志专题 · 爱游戏 · 2025</div>
+
+</body>
+</html>
